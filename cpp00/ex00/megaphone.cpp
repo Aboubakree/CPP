@@ -1,29 +1,17 @@
 #include <iostream>
 
-
-class A
+int main(int argc, char **argv)
 {
-    public :
-        static int x;
-    private :
-        static int y;
-    protected :
-        static int z;
-};
-
-namespace test
-{
-    int x = 10;
-}
-
-int x = 20;
-
-
-int main()
-{
-    int x = 30;
-    std::cout<<test::x<< std::endl;
-    std::cout<<::x<< std::endl;
-    std::cout<<x<< std::endl;
+    if (argc < 2)
+    {
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+        return 0;
+    }
+    for (int i = 1; i < argc; i ++)
+    {
+        for (int j = 0; argv[i][j] != '\0'; j ++)
+            std::cout << (char)std::toupper(argv[i][j]);
+        std::cout << " ";
+    }
     return 0;
 }
