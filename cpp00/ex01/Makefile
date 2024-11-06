@@ -6,7 +6,7 @@ OBJ = $(SRC:.cpp=.o)
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-CPP = c++
+CC = c++
 
 %.o : %.cpp
 	$(CC) ${CPPFLAGS} -o $@ -c $^
@@ -14,7 +14,7 @@ CPP = c++
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CPP) ${CPPFLAGS} -o ${NAME} ${SRC}
+	$(CC) ${CPPFLAGS} -o ${NAME} ${SRC}
 clean :
 	rm -rf $(OBJ)
 
