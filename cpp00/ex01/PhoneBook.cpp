@@ -1,4 +1,4 @@
-#include "PhoneBook.hpp"
+#include "main.hpp"
 
 PhoneBook :: PhoneBook(void) : _size(0), _old_contact(0)
 {}
