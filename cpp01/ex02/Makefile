@@ -1,5 +1,5 @@
-NAME = replace
-SRC = main.cpp 
+NAME = brain
+SRC = main.cpp
 OBJ = ${SRC:.cpp=.o}
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98

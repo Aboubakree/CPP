@@ -2,7 +2,7 @@
 
 void clearscreen() 
 {
-    std::cout << "\033[2J\033[H" << std::flush;
+    std::cout << "\033[2J\033[H";
 }
 
 void wait_user()
@@ -69,13 +69,9 @@ void print_guide(int i, PhoneBook phonebook)
     {
         std::cout << "Looking For Contact Details  : " << std::endl;
         std::cout << "type from       [0-" << (phonebook.get_size() - 1) << "]        : to find a contact." << std::endl;
-        std::cout << "type            9            : to return." << std::endl<< std::endl;
     }
     else if (i == 3)
-    {
-        std::cout << "Your Phone Book Is Empty     :" << std::endl;
-        std::cout << "type            9            : to return." << std::endl<< std::endl;
-    }
+        std::cout << "Your Phone Book Is Empty !" << std::endl;
 }
 
 int convert_index(std::string input)
@@ -123,4 +119,18 @@ void display_details(PhoneBook phonebook,int index)
     std::cout << "Nick  Name     :      " << phonebook.get_contact(index).get_nick_name() << std::endl;
     std::cout << "Number         :      " << phonebook.get_contact(index).get_number() << std::endl;
     std::cout << "Secret         :      " << phonebook.get_contact(index).get_secret() << std::endl;
+}
+
+void more_details(PhoneBook &phonebook)
+{
+    std::string input;
+
+    std::cout << "index -->  : ";
+    getline(std::cin, input);
+    if (std::cin.good() == 0)
+        return (std::cout << "\nIndex Failur" << std::endl, (void)0);
+    else if (convert_index(input) < 0 || convert_index(input) > (phonebook.get_size() - 1))
+        return (std::cout << "Invalide Index ! " << std::endl, (void)0);
+    else
+        display_details(phonebook, convert_index(input));
 }

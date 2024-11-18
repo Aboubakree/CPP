@@ -4,7 +4,7 @@ int main()
 {
     Harl h;
 
-    h.complain("salam cv");
+    h.complain("Hello");
     h.complain("INFO");
     h.complain("WARNING");
     h.complain("ERROR");

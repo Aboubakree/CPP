@@ -2,7 +2,8 @@
 
 int main()
 {
-    randomChump("Hii");
+    randomChump("akrid");
+    randomChump("test");
 
     return 0;
 }

@@ -15,5 +15,6 @@ void    print_guide(int i, PhoneBook phonebook);
 int     convert_index(std::string input);
 void    display_contacts(PhoneBook phonebook);
 void    display_details(PhoneBook phonebook,int index);
-void    search(PhoneBook phonebook);
+void    more_details(PhoneBook &phonebook);
+void    search(PhoneBook &phonebook);
 int     main(void);
