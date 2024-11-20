@@ -24,7 +24,6 @@ int main(int ac, char **argv)
 	return outfile.write(infile_content.c_str(), file_length), 0;
     while (start < file_length)
     {
-	    std::cout << "1" << std::endl;
 		if (infile_content.substr(start, s1_length) == (std::string)argv[2])
 		{
 			outfile.write(argv[3], strlen(argv[3]));
