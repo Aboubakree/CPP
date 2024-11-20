@@ -20,13 +20,16 @@ int main(int ac, char **argv)
     infile_content = buffer.str();
     s1_length = ((std::string)argv[2]).length();
 	file_length = infile_content.length();
+    if (argv[2][0] == '\0')
+	return outfile.write(infile_content.c_str(), file_length), 0;
     while (start < file_length)
     {
+	    std::cout << "1" << std::endl;
 		if (infile_content.substr(start, s1_length) == (std::string)argv[2])
 		{
 			outfile.write(argv[3], strlen(argv[3]));
 			start += s1_length;
-		}
+	}
 		else
 		{
 			outfile.write(&(infile_content.c_str())[start] , 1);
