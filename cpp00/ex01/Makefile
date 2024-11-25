@@ -9,12 +9,12 @@ CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 CPP = c++
 
 %.o : %.cpp
-	$(CC) ${CPPFLAGS} -o $@ -c $^
+	$(CPP) ${CPPFLAGS} -o $@ -c $^
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) ${CPPFLAGS} -o ${NAME} ${SRC}
+	$(CPP) ${CPPFLAGS} -o ${NAME} ${SRC}
 clean :
 	rm -rf $(OBJ)
 

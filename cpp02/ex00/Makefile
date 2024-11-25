@@ -1,20 +1,20 @@
-NAME = megaphone
+NAME = fixed
 
-SRC = megaphone.cpp
+SRC = main.cpp Fixed.cpp
 
-OBJ = $(SRC:.cpp=.o)
+OBJ = ${SRC:.cpp=.o}
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 CPP = c++
 
 %.o : %.cpp
-	$(CPP) ${CPPFLAGS} -o $@ -c $^
+	$(CPP) $(CPPFLAGS) -c -o $@ $^
+
+$(NAME) : $(OBJ)
+	$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJ)
 
 all : $(NAME)
-
-NAME : $(OBJ)
-	$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJ)
 
 clean :
 	rm -rf $(OBJ)
