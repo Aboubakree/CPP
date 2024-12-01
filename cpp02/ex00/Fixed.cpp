@@ -12,9 +12,18 @@ Fixed::Fixed(const Fixed &f)
     std::cout << "copy constructor called " << std::endl;
 }
 
+Fixed& Fixed::operator = (const Fixed &f)
+{
+    std::cout << "Copy assignment operator called" << std::endl;
+    if (this == &f)
+        return *this;
+    this->fixed_point = f.fixed_point;
+    return *this;
+}
+
 Fixed::~Fixed()
 {
-    std::cout << "default deconstructor called " << std::endl;
+    std::cout << "default destructor called " << std::endl;
 }
 
 int Fixed::getRawBits( void ) const
