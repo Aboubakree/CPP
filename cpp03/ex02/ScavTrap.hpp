@@ -6,7 +6,7 @@
 /*   By: akrid <akrid@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 10:39:19 by akrid             #+#    #+#             */
-/*   Updated: 2025/02/15 14:56:32 by akrid            ###   ########.fr       */
+/*   Updated: 2025/02/26 12:12:46 by akrid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ public:
 	ScavTrap(const std::string& _name);
 	ScavTrap& operator=(const ScavTrap& obj);
 	~ScavTrap();
-	void attack(const std::string& target);
-	void guardGate();
+	void 	attack(const std::string& target);
+	void 	guardGate();
 };
