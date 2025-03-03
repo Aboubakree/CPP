@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akrid <akrid@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/15 10:39:29 by akrid             #+#    #+#             */
-/*   Updated: 2025/02/26 13:29:22 by akrid            ###   ########.fr       */
+/*   Created: 2025/03/01 13:10:15 by akrid             #+#    #+#             */
+/*   Updated: 2025/03/01 17:17:39 by akrid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#pragma once
+#include <iostream>
 
-int main()
+class Brain
 {
-	// FragTrap a("robot1");
-	// FragTrap b("robot2");
-	// FragTrap c(a);
-	// FragTrap d;
-	// d = b;
-	// c.info();
-	// d.info();
-	// c.attack(d.get_name());
-	// d.takeDamage(c.get_att_damage());
-	// d.beRepaired(c.get_att_damage());
-	// c.info();
-	// d.info();
-	// d.highFivesGuys();
-	// c.highFivesGuys();
-	ClapTrap x = FragTrap("a");
-	x.attack("b");
-}
+private:
+	std::string	ideas[100];
+public:
+	Brain();
+	Brain(const Brain& obj);
+	Brain& operator=(const Brain& obj);
+	~Brain();
+	std::string		get_idea(int index) const;
+	void			set_idea(const std::string& _idea, int index);
+};

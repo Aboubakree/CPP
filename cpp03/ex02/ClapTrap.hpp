@@ -6,7 +6,7 @@
 /*   By: akrid <akrid@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 10:39:26 by akrid             #+#    #+#             */
-/*   Updated: 2025/02/26 12:13:04 by akrid            ###   ########.fr       */
+/*   Updated: 2025/02/26 13:28:16 by akrid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	ClapTrap(const std::string& _name);
 	ClapTrap(const ClapTrap& obj);
 	ClapTrap& operator=(const ClapTrap& obj);
-	virtual ~ClapTrap();
+	~ClapTrap();
 	std::string		get_name();
 	unsigned int	get_att_damage();
 	void			set_att_damage(unsigned int att_dmg);

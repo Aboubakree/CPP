@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akrid <akrid@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/15 10:39:29 by akrid             #+#    #+#             */
-/*   Updated: 2025/02/26 13:29:22 by akrid            ###   ########.fr       */
+/*   Created: 2025/02/26 20:47:53 by akrid             #+#    #+#             */
+/*   Updated: 2025/02/28 17:21:50 by akrid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#pragma once
+#include <iostream>
 
-int main()
+class Animal
 {
-	// FragTrap a("robot1");
-	// FragTrap b("robot2");
-	// FragTrap c(a);
-	// FragTrap d;
-	// d = b;
-	// c.info();
-	// d.info();
-	// c.attack(d.get_name());
-	// d.takeDamage(c.get_att_damage());
-	// d.beRepaired(c.get_att_damage());
-	// c.info();
-	// d.info();
-	// d.highFivesGuys();
-	// c.highFivesGuys();
-	ClapTrap x = FragTrap("a");
-	x.attack("b");
-}
+protected:
+    std::string type;
+public:
+    Animal();
+	Animal(const Animal& obj);
+	Animal(const std::string& _type);
+	Animal& operator=(const Animal& obj);
+    virtual ~Animal();
+	virtual	std::string		getType() const;
+	virtual void	makeSound() const;
+};

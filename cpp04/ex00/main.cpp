@@ -5,29 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: akrid <akrid@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/15 10:39:29 by akrid             #+#    #+#             */
-/*   Updated: 2025/02/26 13:29:22 by akrid            ###   ########.fr       */
+/*   Created: 2025/02/26 20:53:07 by akrid             #+#    #+#             */
+/*   Updated: 2025/03/01 11:44:19 by akrid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include <iostream>
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+
 
 int main()
 {
-	// FragTrap a("robot1");
-	// FragTrap b("robot2");
-	// FragTrap c(a);
-	// FragTrap d;
-	// d = b;
-	// c.info();
-	// d.info();
-	// c.attack(d.get_name());
-	// d.takeDamage(c.get_att_damage());
-	// d.beRepaired(c.get_att_damage());
-	// c.info();
-	// d.info();
-	// d.highFivesGuys();
-	// c.highFivesGuys();
-	ClapTrap x = FragTrap("a");
-	x.attack("b");
+	const Animal*	meta = new Animal();
+	const Animal*	i = new Cat();
+	const Animal*	j = new Dog();
+	WrongAnimal*	test = new WrongCat();
+	const Animal*	k = new Cat();
+
+	delete k;
+	k = i;
+	std::cout << i->getType() << " " << std::endl;
+	std::cout << j->getType() << " " << std::endl;
+	meta->makeSound();
+	i->makeSound();
+	j->makeSound();
+	test->makeSound(); 
+
+	delete meta;
+	delete i;
+	delete j;
+	delete test;
+
+	return 0;
 }

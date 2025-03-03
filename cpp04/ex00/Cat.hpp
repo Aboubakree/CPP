@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akrid <akrid@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/15 10:39:29 by akrid             #+#    #+#             */
-/*   Updated: 2025/02/26 13:29:22 by akrid            ###   ########.fr       */
+/*   Created: 2025/02/27 10:02:16 by akrid             #+#    #+#             */
+/*   Updated: 2025/03/03 13:54:22 by akrid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#pragma once
+#include "Animal.hpp"
 
-int main()
+class Cat : public Animal
 {
-	// FragTrap a("robot1");
-	// FragTrap b("robot2");
-	// FragTrap c(a);
-	// FragTrap d;
-	// d = b;
-	// c.info();
-	// d.info();
-	// c.attack(d.get_name());
-	// d.takeDamage(c.get_att_damage());
-	// d.beRepaired(c.get_att_damage());
-	// c.info();
-	// d.info();
-	// d.highFivesGuys();
-	// c.highFivesGuys();
-	ClapTrap x = FragTrap("a");
-	x.attack("b");
-}
+public:
+	Cat();
+	Cat(const Cat& obj);
+	Cat& operator=(const Cat& obj);
+	~Cat();
+	void		makeSound() const;
+};
+
+
