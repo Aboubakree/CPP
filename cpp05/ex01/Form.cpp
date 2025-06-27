@@ -28,7 +28,7 @@ Form::Form(const Form& obj):
 _name(obj._name),
 _gradeToSign(obj._gradeToSign),
 _gradeToExecute(obj._gradeToExecute),
-_is_signed(false)
+_is_signed(obj._is_signed)
 {
 
 }

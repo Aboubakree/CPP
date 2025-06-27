@@ -70,12 +70,12 @@ void                Bureaucrat::signForm(const std::string& formName, bool ssign
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-    return "Grade is too high! Minimum grade is 1.";
+    return "Grade is too high! Maximum grade is 1.";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return "Grade is too low! Maximum grade is 150.";
+    return "Grade is too low! Minimum grade is 150.";
 }
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& obj)
