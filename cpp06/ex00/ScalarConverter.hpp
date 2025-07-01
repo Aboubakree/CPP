@@ -20,15 +20,13 @@ private:
     static void convertFromFloat(float value);
     static void convertFromDouble(double value);
     static bool isDisplayable(char c);
-
-public:
-    static void convert(const std::string& literal);
-    
-    // Make constructor private to prevent instantiation
     ScalarConverter();
     ScalarConverter(const ScalarConverter& other);
     ScalarConverter& operator=(const ScalarConverter& other);
     ~ScalarConverter();
+
+public:
+    static void convert(const std::string& literal);
 };
 
 #endif

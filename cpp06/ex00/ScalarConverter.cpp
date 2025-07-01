@@ -31,14 +31,13 @@ ScalarConverter::Type ScalarConverter::detectType(const std::string& literal)
 {
     if (literal.empty())
         return INVALID;
-
+    
     // Check for char type: 'c'
-    // if (literal.length() == 3 && literal[0] == '\'' && literal[2] == '\'')
-    //     return CHAR;
-    if (literal.length() == 1 && std::isalpha(static_cast<unsigned char>(literal[0])))
+    if (literal.length() == 3 && literal[0] == '\'' && literal[2] == '\'')
     {
+        std::cout << "test" << std::endl;
         return CHAR;
-    }
+    }   
 
     // Check for special float values
     if (literal == "nanf" || literal == "+inff" || literal == "-inff")
@@ -49,7 +48,7 @@ ScalarConverter::Type ScalarConverter::detectType(const std::string& literal)
         return DOUBLE;
 
     // Check for float type (ends with 'f')
-    if (literal.length() > 1 && literal[literal.length() - 1] == 'f')
+    if (literal.length() > 2 && literal[literal.length() - 1] == 'f')
     {
         std::string temp = literal.substr(0, literal.length() - 1);
         if (temp.find('.') != std::string::npos)
@@ -57,7 +56,7 @@ ScalarConverter::Type ScalarConverter::detectType(const std::string& literal)
     }
 
     // Check for double type (contains decimal point)
-    if (literal.find('.') != std::string::npos)
+    if (literal.length() > 2 && literal.find('.') != std::string::npos)
         return DOUBLE;
 
     // Check for int type (only digits and optional sign)
@@ -67,6 +66,7 @@ ScalarConverter::Type ScalarConverter::detectType(const std::string& literal)
     
     for (size_t i = start; i < literal.length(); i++)
     {
+        std::cout << literal[i] << std::endl;
         if (std::isdigit(literal[i]) == 0)
             return INVALID;
     }
