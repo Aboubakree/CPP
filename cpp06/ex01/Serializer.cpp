@@ -1,15 +1,31 @@
 #include "Serializer.hpp"
 
-// Private constructor - prevents instantiation
-Serializer::Serializer() {
+
+Serializer::Serializer() 
+{
+}
+Serializer::~Serializer()
+{
 }
 
-uintptr_t Serializer::serialize(Data* ptr) {
-    // Use reinterpret_cast to convert pointer to uintptr_t
-    return reinterpret_cast<uintptr_t>(ptr);
+Serializer::Serializer(const Serializer& obj)
+{
+    (void)obj;
 }
 
-Data* Serializer::deserialize(uintptr_t raw) {
-    // Use reinterpret_cast to convert uintptr_t back to pointer
-    return reinterpret_cast<Data*>(raw);
+Serializer& Serializer::operator=(const Serializer& obj)
+{  
+    (void)obj;
+    return *this;
+}
+
+
+uintptr_t Serializer::serialize(Data* ptr)
+{
+    return reinterpret_cast<uintptr_t> (ptr);
+}
+
+Data* Serializer::deserialize(uintptr_t raw)
+{
+    return reinterpret_cast<Data*> (raw);
 }

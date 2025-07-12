@@ -2,13 +2,15 @@
 #include <stdint.h>
 #include "Data.hpp"
 
-class Serializer {
+class Serializer 
+{
 private:
-    // Private constructor to prevent instantiation
     Serializer();
+    ~Serializer();
+    Serializer(const Serializer& obj);
+    Serializer& operator=(const Serializer& obj);
     
 public:
-    // Static methods for serialization and deserialization
     static uintptr_t serialize(Data* ptr);
     static Data* deserialize(uintptr_t raw);
 };

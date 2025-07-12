@@ -1,12 +1,12 @@
-NAME = convert
+NAME = a.out
 
-SRC = main.cpp ScalarConverter.cpp
+SRC = main.cpp
 
-OBJ = main.o ScalarConverter.o
+OBJ = main.o
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 $(NAME) : $(OBJ)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
