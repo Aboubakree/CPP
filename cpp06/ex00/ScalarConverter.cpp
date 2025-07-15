@@ -76,13 +76,9 @@ bool	ScalarConverter::isInt(const std::string &input)
 			return (false);
 	}
 
-	try
-	{
-		long long int result = std::atoll(input.c_str());
-		if (result < INT_MIN || result > INT_MAX)
-			return (false);
-	}
-	catch (...) { return (false); }
+	long long int result = std::atoll(input.c_str());
+	if (result < INT_MIN || result > INT_MAX)
+		return (false);
 
 	return (true);
 }
@@ -144,10 +140,8 @@ bool	ScalarConverter::isFloat(const std::string &input)
 		decimalFound = true;
 		i++;
 	}
-	// Vérifie les chiffres après le point
 	for (; i < input.size() && std::isdigit(input[i]); i++)
 		digitAfterDecimal = true;
-	// Finir par 'f' ou 'F' après les chiffres
 	if (i == input.size() - 1 && (input[i] == 'f' || input[i] == 'F')
 		&& (digitBeforeDecimal || digitAfterDecimal) && decimalFound)
 		return (true);
@@ -207,16 +201,13 @@ bool	ScalarConverter::isDouble(const std::string &input)
 		i++;
 	if (i == input.size())
 		return (false);
-	// Check chiffres avant le point
 	for (; i < input.size() && std::isdigit(input[i]); i++)
 		digitBeforeDecimal = true;
-	// Check point décimal
 	if (i < input.size() && input[i] == '.')
 	{
 		decimalFound = true;
 		i++;
 	}
-	// Check chiffres après le point
 	for (; i < input.size() && std::isdigit(input[i]); i++)
 		digitAfterDecimal = true;
 
