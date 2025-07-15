@@ -1,31 +1,23 @@
 #include <iostream>
+#include "whatever.hpp"
 
 
-class A
+
+
+
+int main( void ) 
 {
-private:
-    int x;
-public:
-    A(){};
-    ~A(){};
-    int getX() const {return x;};
-    void setX(int new_x) {x = new_x;};
-};
-
-
-A operator+(const A& a1, const A& a2)
-{
-    A a;
-    a.setX(a1.getX() + a2.getX());
-    return a;
-}
-
-int main()
-{
-    A a,b,c;
-    a.setX(1);
-    b.setX(2);
-    c = a + b;
-    std::cout << c.getX() << std::endl;
+    int a = 2;
+    int b = 3;
+    ::swap( a, b );
+    std::cout << "a = " << a << ", b = " << b << std::endl;
+    std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+    std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+    std::string c = "chaine1";
+    std::string d = "chaine2";
+    ::swap(c, d);
+    std::cout << "c = " << c << ", d = " << d << std::endl;
+    std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+    std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
     return 0;
 }
