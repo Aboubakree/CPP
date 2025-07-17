@@ -1,8 +1,8 @@
 NAME = a.out
 
-SRC = main.cpp
+SRC = main.cpp 
 
-OBJ = main.o
+OBJ = main.o 
 
 CXX = c++
 
