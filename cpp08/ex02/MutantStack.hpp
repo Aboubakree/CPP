@@ -10,14 +10,5 @@ public:
     ~MutantStack();
 };
 
-template <typename T>
-MutantStack::MutantStack()
-{
-}
-
-template <typename T>
-MutantStack::~MutantStack()
-{
-}
 
 #include "MutantStack.tpp"
